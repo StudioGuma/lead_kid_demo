@@ -1,6 +1,7 @@
 #ifndef SFX_DATA_H_
 #define SFX_DATA_H_
 
+BANKREF_EXTERN(SFX_JUMP)
 extern const uint8_t SFX_JUMP[];
 
 BANKREF_EXTERN(SFX_BONK)
