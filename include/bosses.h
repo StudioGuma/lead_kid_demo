@@ -9,8 +9,6 @@
 #define BOSS_DAMAGED_TRUE boss_state |= 0b10
 #define BOSS_DAMAGED_FALSE boss_state &= ~(0b10)
 
-#define ATK_TIMER_MAX 0b10000
-
 #define HURT_BOSS \
 boss_hp--; \
 PLAY_SOUND(SFX_BOSS_DMG); \
@@ -24,7 +22,7 @@ BANKREF_EXTERN(BOSSES)
 
 extern const metasprite_t META_BOSS_FACTORY_HURT[];
 extern uint8_t boss_pos_x, boss_pos_y, boss_hp, boss_dmg_timer, boss_state,
-boss_init_pos_x, boss_init_pos_y, atk_timer;
+boss_init_pos_x, boss_init_pos_y;
 
 void init_boss(void);
 void boss_update(void);

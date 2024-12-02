@@ -40,7 +40,7 @@ const metasprite_t META_BOSS_FACTORY_HURT[] = {
 };
 
 uint8_t boss_pos_x, boss_pos_y, boss_hp, boss_state, boss_dmg_timer,
-boss_init_pos_x, boss_init_pos_y, atk_timer;
+boss_init_pos_x, boss_init_pos_y;
 
 void init_boss(void)
 {
@@ -50,7 +50,6 @@ void init_boss(void)
 		boss_pos_x = boss_init_pos_x;
 		boss_pos_y = boss_init_pos_y;
 		boss_dmg_timer = 0;
-		atk_timer = 0;
 		BOSS_DAMAGED_FALSE;
 	}
 }
@@ -58,7 +57,7 @@ void init_boss(void)
 void boss_update(void)
 {
 	if (BOSS_ATTACK) {
-		(atk_timer < ATK_TIMER_MAX) ? atk_timer++ : (boss_pos_y += 0b100);
+		boss_pos_y += 0b100;
 
 		if (is_solid(boss_pos_x, boss_pos_y + 0b1000)) {
 			if ((cur_map_ptr[tile_index(boss_pos_x - 0b10000,
@@ -70,22 +69,21 @@ void boss_update(void)
 			} else {
 				PLAY_SOUND(SFX_BONK);
 			}
-
-			atk_timer = 0;
 			BOSS_ATTACK_FALSE;
 		}
 
-	} else if (boss_pos_y > (BOSS_FACTORY_INIT_Y + (BOSS_HP_MAX << 0b10)
-	- (boss_hp << 0b10))) {
-		boss_pos_y -= 0b10;
-	} else if (boss_pos_x > pos_x
-	&& !is_solid(boss_pos_x - 0b10001, boss_pos_y)) {
-		boss_pos_x--;
-	} else if (boss_pos_x < pos_x
-	&& !is_solid(boss_pos_x + 0b10000, boss_pos_y)) {
-		boss_pos_x++;
 	} else {
-		BOSS_ATTACK_TRUE;
+		if (boss_pos_y > (BOSS_FACTORY_INIT_Y + (BOSS_HP_MAX << 0b10)
+		- (boss_hp << 0b10)))
+			boss_pos_y -= 0b10;
+		else if (boss_pos_x > pos_x
+		&& !is_solid(boss_pos_x - 0b10001, boss_pos_y))
+			boss_pos_x--;
+		else if (boss_pos_x < pos_x
+		&& !is_solid(boss_pos_x + 0b10000, boss_pos_y))
+			boss_pos_x++;
+		else
+			BOSS_ATTACK_TRUE;
 	}
 
 	if (abs((int16_t)pos_x - (int16_t)boss_pos_x) < 0b10000

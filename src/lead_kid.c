@@ -180,7 +180,7 @@ void lead_kid_update(void)
 		if (JUMPING) {
 			jump_buf = JUMP_BUF_MAX;
 		} else {
-			PLAY_SOUND(SFX_JUMP);
+			sfx_set_sample(0, SFX_JUMP);
 
 			JUMPING_TRUE;
 			vel_y = JUMP_HEIGHT;
@@ -191,7 +191,7 @@ void lead_kid_update(void)
 		jump_buf--;
 
 		if (!(JUMPING)) {
-			PLAY_SOUND(SFX_JUMP);
+			sfx_set_sample(0, SFX_JUMP);
 
 			JUMPING_TRUE;
 			vel_y = JUMP_HEIGHT;
