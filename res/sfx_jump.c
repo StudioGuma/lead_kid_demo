@@ -1,5 +1,8 @@
+#pragma bank 255
+
 #include <gbdk/platform.h>
 
+BANKREF(SFX_JUMP)
 const uint8_t SFX_JUMP[] = {
 0x01,0b11111000,0x47,0x3f,0xc2,0x42,0x86,
 0x00,
