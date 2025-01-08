@@ -15,7 +15,7 @@ LCCFLAGS += -autobank -Iinclude -Wf--Werror \
 
 # DEBUG = ON
 ifdef DEBUG
-	LCCFLAGS += -debug -v -Wb-ext=.rel
+	LCCFLAGS += -debug -Wb-ext=.rel
 endif
 
 # You can set the name of the .gb ROM file here
