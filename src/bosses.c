@@ -1,5 +1,3 @@
-#pragma bank 1
-
 #include <gbdk/platform.h>
 #include <gbdk/metasprites.h>
 #include <gbdk/far_ptr.h>
@@ -12,8 +10,6 @@
 #include "main.h"
 #include "maps.h"
 #include "sfx_data.h"
-
-BANKREF(BOSSES)
 
 const metasprite_t META_BOSS_FACTORY[] = {
 	{.dy = -0b1000, .dx = -0b10000, .dtile = 0, .props = 0},

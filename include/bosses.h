@@ -18,8 +18,6 @@ if (boss_hp == 0) \
 
 #define BOSS_FACTORY_INIT_Y 0b10000
 
-BANKREF_EXTERN(BOSSES)
-
 extern const metasprite_t META_BOSS_FACTORY_HURT[];
 extern uint8_t boss_pos_x, boss_pos_y, boss_hp, boss_dmg_timer, boss_state,
 boss_init_pos_x, boss_init_pos_y;

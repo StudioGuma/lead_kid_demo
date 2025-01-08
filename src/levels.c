@@ -34,9 +34,9 @@ void init_level(void)
 		init_pos_y = 0b1111000;
 		break;
 	default:
-		cur_map = FP(MAP_FACTORY_1000);
+		cur_map = FP(MAP_FACTORY_111);
 		init_pos_x = 0b1000;
-		init_pos_y = 0b1100000;
+		init_pos_y = 0b1101000;
 	}
 	
 	pos_x = init_pos_x;

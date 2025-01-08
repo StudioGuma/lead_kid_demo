@@ -22,7 +22,7 @@
 
 #define PLAY_SOUND(s) sfx_set_sample(BANK(s), s)
 
-extern uint8_t cur_state, just_paused, options;
+extern uint8_t cur_state, just_paused, options, saved_bank;
 
 inline void write_text(const uint8_t X, const uint8_t Y,
 const char *const TEXT);

@@ -36,8 +36,16 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 const uint8_t const PAUSE_IDXS[0b100] = {0b11, 0b110, 0b1001, 0b1100};
 uint8_t cur_state, prev_state, prev_prev_state, pause_idx, min_pause_idx,
-just_paused, options;
+just_paused, options, saved_bank = 1;
 uint16_t lv_clear_timer;
+
+void play_music(void)
+{
+	saved_bank = CURRENT_BANK;
+	SWITCH_ROM(FAR_SEG(cur_song));
+	hUGE_dosound();
+	SWITCH_ROM(saved_bank);
+}
 
 inline void write_text(const uint8_t X, const uint8_t Y,
 const char *const TEXT)
@@ -101,6 +109,7 @@ void init_state(const uint8_t STATE)
 
 		write_text(0b1000, 0b1010, "Demo");
 		write_text(1, 0b10000, "2024 StudioGuma");
+		write_text(0, 0, "d1p1");
 
 		SWITCH_ROM(BANK(MUS_TITLE));
 		INIT_SONG(MUS_TITLE);
@@ -177,7 +186,7 @@ void main(void)
 	rAUDENA = AUDENA_ON;
 	rAUDTERM |= 0b11111111;
 	add_VBL((int_handler)sfx_play_isr);
-	add_VBL((int_handler)hUGE_dosound);
+	add_VBL((int_handler)play_music);
 	rAUDVOL = 0b1110111;
 
 	// Window layer displays at the bottom right

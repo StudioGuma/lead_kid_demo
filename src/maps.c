@@ -12,12 +12,13 @@
 #include "mus_data.h"
 #include "spr_data.h"
 
-FAR_PTR cur_map, right_map, left_map, top_map, bottom_map;
+FAR_PTR cur_map, right_map, left_map, top_map, bottom_map, cur_song;
 const uint8_t *cur_map_ptr = NULL;
-const hUGESong_t *cur_song = NULL;
+const hUGESong_t *cur_song_ptr = NULL;
 
 void init_map(const FAR_PTR MAP)
 {
+
 	cur_map = MAP;
 
 	SWITCH_ROM(FAR_SEG(cur_map));
@@ -84,17 +85,14 @@ void init_map(const FAR_PTR MAP)
 		init_pos_y = 0b1111000;
 
 	} else if (MAP == FP(MAP_FACTORY_111)) {
+		CHECKPOINT_UPDATE
+
 		right_map = FP(MAP_FACTORY_1000);
 		left_map = FP(MAP_FACTORY_110);
 		top_map = NULL;
 		bottom_map = NULL;
 
-		init_pos_x = 0b1000;
-		init_pos_y = 0b1101000;
-
 	} else if (MAP == FP(MAP_FACTORY_1000)) {
-		CHECKPOINT_UPDATE
-
 		right_map = FP(MAP_FACTORY_1001);
 		left_map = FP(MAP_FACTORY_111);
 		top_map = NULL;
