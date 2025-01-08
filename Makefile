@@ -52,6 +52,5 @@ $(BINS):	$(OBJS)
 prepare:
 	mkdir -p $(OBJDIR)
 
-# Delete all files in obj except the save file
 clean:
-	rm -rf $(OBJDIR)
+	rm -r $(OBJDIR)
