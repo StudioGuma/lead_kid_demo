@@ -12,4 +12,4 @@ Stuff used to make this:
 
 Building requires GBDK 2020 and Make. Make sure to edit the makefile based on your OS and the path you have GBDK in (assumed to be the home directory `~` by default). In the project's directory in the terminal, type `make` to build and `make clean` to clean. The compiled ROM can be played on an emulator or flashcart.
 
-Assets licensed under [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+Assets licensed under [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0)
