@@ -1060,7 +1060,7 @@ static const unsigned char P12[] = {
     DN(E_3,15,0x481),
     DN(E_3,14,0x481),
     DN(E_3,13,0x481),
-    DN(E_3,12,0x481),
+    DN(E_3,12,0xB02),
 };
 
 static const unsigned char* const order1[] = {P0,P0,P0,P0,P0,P0,P0,P0,P0,P0,P0,P0,P0};

@@ -9,7 +9,6 @@
 #include "maps.h"
 #include "main.h"
 #include "map_data.h"
-#include "mus_data.h"
 #include "spr_data.h"
 
 FAR_PTR cur_map, right_map, left_map, top_map, bottom_map, cur_song;
@@ -18,7 +17,6 @@ const hUGESong_t *cur_song_ptr = NULL;
 
 void init_map(const FAR_PTR MAP)
 {
-
 	cur_map = MAP;
 
 	SWITCH_ROM(FAR_SEG(cur_map));
@@ -52,7 +50,7 @@ void init_map(const FAR_PTR MAP)
 		init_pos_y = 0b1001000;
 
 	} else if (MAP == FP(MAP_FACTORY_11)) {
-		right_map =FP( MAP_FACTORY_100);
+		right_map = FP( MAP_FACTORY_100);
 		left_map = FP(MAP_FACTORY_10);
 		top_map = NULL;
 		bottom_map = NULL;
@@ -177,12 +175,6 @@ void init_map(const FAR_PTR MAP)
 
 		init_boss();
 	}
-
-	if (cur_checkpoint == 0b10) {
-		INIT_SONG(MUS_BOSS)
-	} else {
-		INIT_SONG(MUS_FACTORY)
-	}
 }
 
 void map_update(void)
@@ -190,25 +182,33 @@ void map_update(void)
 	if (pos_x > 0b10100000 && pos_x <= 0b11000000) {
 		just_paused = 0;
 		pos_x -= 0b10100000;
-		if (right_map != NULL)
+		if (right_map != NULL) {
 			init_map(right_map);
+			switch_song();
+		}
 
 	} else if (pos_x > 0b11000000) {
 		just_paused = 0;
 		pos_x += 0b10100000;
-		if (left_map != NULL)
+		if (left_map != NULL) {
 			init_map(left_map);
+			switch_song();
+		}
 
 	} else if (pos_y > 0b11000000) {
 		just_paused = 0;
 		pos_y += 0b10010000;
-		if (top_map != NULL)
+		if (top_map != NULL) {
 			init_map(top_map);
+			switch_song();
+		}
 
 	} else if (pos_y > 0b10010000 && pos_y <= 0b11000000) {
 		just_paused = 0;
 		pos_y -= 0b10010000;
-		if (bottom_map != NULL)
+		if (bottom_map != NULL) {
 			init_map(bottom_map);
+			switch_song();
+		}
 	}
 }

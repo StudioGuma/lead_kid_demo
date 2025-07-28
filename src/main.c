@@ -109,10 +109,10 @@ void init_state(const uint8_t STATE)
 
 		write_text(0b1000, 0b1010, "Demo");
 		write_text(1, 0b10000, "2024 StudioGuma");
-		write_text(0, 0, "d1p2");
+		write_text(0, 0, "d1p3");
+		write_text(0, 1, "Code GPLv3");
 
-		SWITCH_ROM(BANK(MUS_TITLE));
-		INIT_SONG(MUS_TITLE);
+		INIT_SONG(MUS_TITLE)
 
 		SHOW_BKG;
 		break;

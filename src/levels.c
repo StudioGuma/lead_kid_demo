@@ -11,6 +11,7 @@
 #include "treasure.h"
 #include "bkg_data.h"
 #include "map_data.h"
+#include "mus_data.h"
 #include "spr_data.h"
 
 uint8_t cur_checkpoint;
@@ -44,4 +45,15 @@ void init_level(void)
 	vel_y = 0;
 
 	init_state(GAME_STATE);
+	switch_song();
+}
+
+inline void switch_song(void)
+{
+	if (cur_checkpoint == 0b10) {
+		INIT_SONG(MUS_BOSS)
+
+	} else {
+		INIT_SONG(MUS_FACTORY)
+	}
 }

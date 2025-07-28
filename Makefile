@@ -10,8 +10,8 @@ GBDK_HOME = ~/gbdk
 LCC = ${GBDK_HOME}/bin/lcc
 
 # You can set flags for LCC here
-LCCFLAGS += -autobank -Iinclude -Wf--Werror \
--Wl-llib/hUGEDriver.lib -Wm-yn"LEAD KID DEMO" -Wm-yt0x19
+LCCFLAGS += -autobank -Iinclude -Wf--Werror -Wl-llib/hUGEDriver.lib \
+-Wm-yn"LEAD KID DEMO" -Wm-yt0x19 -Wf-opt-code-speed
 
 # DEBUG = ON
 ifdef DEBUG
