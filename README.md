@@ -2,7 +2,7 @@
 
 One-level demo of a platforming game for the Game Boy.
 
-Stuff used to make this:
+Made with:
 * [GBDK 2020](https://github.com/gbdk-2020/gbdk-2020)
 * [GBTD and GBMB](https://github.com/gbdk-2020/GBTD_GBMB) (with Wine)
 * [Furnace](https://github.com/tildearrow/furnace)
