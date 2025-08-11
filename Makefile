@@ -11,11 +11,14 @@ LCC = ${GBDK_HOME}/bin/lcc
 
 # You can set flags for LCC here
 LCCFLAGS += -autobank -Iinclude -Wf--Werror -Wl-llib/hUGEDriver.lib \
--Wm-yn"LEAD KID DEMO" -Wm-yt0x19 -Wf-opt-code-speed
+-Wm-yn"LEAD KID DEMO" -Wm-yt0x19
 
 # DEBUG = ON
 ifdef DEBUG
 	LCCFLAGS += -debug -Wb-ext=.rel
+endif
+ifndef DEBUG
+	LCCFLAGS += -Wf-opt-code-speed
 endif
 
 # You can set the name of the .gb ROM file here
