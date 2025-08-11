@@ -1,5 +1,4 @@
-#ifndef MAPS_H_
-#define MAPS_H_
+#pragma once
 
 #define CHECKPOINT_UPDATE \
 if (cur_checkpoint == 0) { \
@@ -13,5 +12,3 @@ extern const hUGESong_t *cur_song_ptr;
 
 void init_map(const FAR_PTR MAP);
 void map_update(void);
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef MAIN_H_
-#define MAIN_H_
+#pragma once
 
 #define TITLE_STATE 0
 #define GAME_STATE 1
@@ -43,5 +42,3 @@ const char *const TEXT);
 inline uint8_t abs(int16_t n);
 void reset_sound(void);
 void init_state(const uint8_t STATE);
-
-#endif

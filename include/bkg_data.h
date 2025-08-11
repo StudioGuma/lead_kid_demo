@@ -1,5 +1,4 @@
-#ifndef BKG_DATA_H_
-#define BKG_DATA_H_
+#pragma once
 
 BANKREF_EXTERN(BKG_UPPERCASE)
 extern const uint8_t BKG_UPPERCASE[];
@@ -24,5 +23,3 @@ BANKREF_EXTERN(BKG_NUMBERS)
 extern const uint8_t BKG_NUMBERS[];
 BANKREF_EXTERN(BKG_DR_AGON_LOGO)
 extern const uint8_t BKG_DR_AGON_LOGO[];
-
-#endif

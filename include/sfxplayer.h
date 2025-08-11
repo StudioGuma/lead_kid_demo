@@ -1,5 +1,4 @@
-#ifndef __SFX_PLAYER_H_INCLUDE__
-#define __SFX_PLAYER_H_INCLUDE__
+#pragma once
 
 #include <gbdk/platform.h>
 #include <stdint.h>
@@ -66,5 +65,3 @@ inline void sfx_set_sample(uint8_t bank, const uint8_t * sample) {
 
 // SFX driver interrupt routine
 uint8_t sfx_play_isr(void);
-
-#endif

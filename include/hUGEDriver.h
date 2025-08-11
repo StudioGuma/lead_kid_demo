@@ -1,5 +1,4 @@
-#ifndef HUGEDRIVER_H_INCLUDE
-#define HUGEDRIVER_H_INCLUDE
+#pragma once
 
 #include <gbdk/platform.h>
 
@@ -138,5 +137,3 @@ extern volatile unsigned char hUGE_mute_mask;
 inline void hUGE_reset_wave(void) {
 	hUGE_current_wave = 100;
 }
-
-#endif

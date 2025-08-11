@@ -1,5 +1,4 @@
-#ifndef MUS_DATA_H_
-#define MUS_DATA_H_
+#pragma once
 
 BANKREF_EXTERN(MUS_TITLE)
 extern const hUGESong_t MUS_TITLE;
@@ -14,5 +13,3 @@ BANKREF_EXTERN(MUS_LV_CLEAR)
 extern const hUGESong_t MUS_LV_CLEAR;
 BANKREF_EXTERN(MUS_LV_CLEAR_P_RANK)
 extern const hUGESong_t MUS_LV_CLEAR_P_RANK;
-
-#endif

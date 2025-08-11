@@ -1,5 +1,4 @@
-#ifndef BOSSES_H_
-#define BOSSES_H_
+#pragma once
 
 #define BOSS_HP_MAX 0b1000
 #define BOSS_ATTACK boss_state & 1
@@ -24,5 +23,3 @@ boss_init_pos_x, boss_init_pos_y;
 
 void init_boss(void);
 void boss_update(void);
-
-#endif

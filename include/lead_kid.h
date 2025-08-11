@@ -1,5 +1,4 @@
-#ifndef LEAD_KID_H_
-#define LEAD_KID_H_
+#pragma once
 
 #define SPD_X 0b11
 #define ACL_Y 1
@@ -53,5 +52,3 @@ void take_damage(void);
 inline uint16_t tile_index(uint8_t x, uint8_t y);
 inline uint8_t is_solid(const uint8_t X, const uint8_t Y);
 void lead_kid_update(void);
-
-#endif

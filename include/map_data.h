@@ -1,5 +1,4 @@
-#ifndef MAP_DATA_H_
-#define MAP_DATA_H_
+#pragma once
 
 extern const uint8_t MAP_BLANK[];
 
@@ -40,5 +39,3 @@ extern const uint8_t MAP_FACTORY_10000[];
 
 BANKREF_EXTERN(MAP_TITLE_SCREEN)
 extern const uint8_t MAP_TITLE_SCREEN[];
-
-#endif
